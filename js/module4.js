@@ -1525,3 +1525,30 @@
 // const names = sortedByAscendingScore.map((student) => student.name);
 
 // console.log(names); // ['Аякс', 'Полі', 'Манго', 'Ківі']
+
+// ===============================================================================
+// завдання з лекції
+const nestedArray = [1, [2, 3], [4, [5, 6]]];
+// const nestedArray = [1, [2, 8, [[[[89, [[65, [[[[78]]]]]]]]]], 3], [4, [5, 6]]];
+const result = countNestedArrays(nestedArray);
+
+function countNestedArrays(arr) {
+  let count = 0;
+  const stack = [...arr]; // Початково поміщаємо весь масив в стек
+  console.log(stack);
+  while (stack.length > 0) {
+    const current = stack.pop(); // Беремо останній елемент зі стеку
+    console.log(`stack.length: ${stack.length}`);
+    console.log(`current: ${current}`);
+    console.log(`stack: ${stack}`);
+    if (Array.isArray(current)) {
+      count += 1; // Якщо це масив, збільшуємо лічильник
+      console.log(`count: ${count}`);
+      stack.push(...current); // Додаємо всі елементи масиву назад у стек
+    }
+  }
+
+  return count;
+}
+
+console.log(`Кількість вкладених масивів: ${result}`);
