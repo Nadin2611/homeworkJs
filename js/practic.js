@@ -217,6 +217,10 @@
 //TODO:=========task-01=================
 // Дано масив чисел [1, 2, 3, 4, 5]. Створіть новий масив, що містить квадрати кожного елементу вхідного масиву. Очікуваний результат: [1, 4, 9, 16, 25].
 
+// const arr = [1, 2, 3, 4, 5];
+// const powerArray = arr.map((item) => (item = Math.pow(item, 2)));
+// console.log(powerArray);
+
 //TODO:=========task-02=================
 
 // Дано масив об'єктів {id: 1, values: [1, 2, 3]}, {id: 2, values: [4, 5, 6]}, {id: 3, values: [7, 8, 9]}. Створіть новий масив, що містить всі значення з масивів values кожного об'єкту, збережених в одному масиві. Очікуваний результат: [1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -227,6 +231,9 @@
 //   { id: 3, values: [7, 8, 9] },
 // ];
 
+// const newArray = data.flatMap((item) => item.values);
+
+// console.log(newArray);
 //TODO:=========task-03=================
 
 // Дано масив об'єктів {name: "John", age: 27}, {name: "Jane", age: 31}, {name: "Bob", age: 19}. Перевірте, чи є хоча б один об'єкт з віком менше 20 років. Очікуваний результат: true.
@@ -237,38 +244,62 @@
 //   { name: "Bob", age: 19 },
 // ];
 
+// const whoAnderTwenty = people.some((person) => person.age < 20);
+// console.log(whoAnderTwenty);
+
 //TODO:=========task-04=================
 
 //  Дано масив чисел [2, 4, 6, 8, 10]. Перевірте, чи є кожен елемент масиву парним. Очікуваний результат: true.
 // const numbers = [2, 4, 6, 8, 10];
+// const isEven = numbers.every((number) => number % 2 === 0);
+// console.log(isEven);
 
 //TODO:=========task-05=================
 
 // Знайдіть перше непарне число
 // const numbers = [2, 1, 6, 8, 9, 10, 12];
+// const firstOdd = numbers.find((number) => number % 2 !== 0);
+// console.log(firstOdd);
 
 //TODO:=========task-06=================
 
 // Відсортуйте масив чисел [4, 2, 5, 1, 3] у порядку зростання. Очікуваний результат: [1, 2, 3, 4, 5].
+// const numbers = [4, 2, 5, 1, 3];
+// // const arrByGrowth = [...numbers].sort();
+// const arrByGrowth = [...numbers].sort((a, b) => a - b);
+// console.log(arrByGrowth);
 
 //TODO:===============task-07===============================
 
 // Відсортуйте масив рядків ["banana", "orange", "apple", "pear"] у порядку алфавіту. Очікуваний результат: ["apple", "banana", "orange", "pear"].
+
+// const words = ["banana", "orange", "apple", "pear"];
+// const res = [...words].sort((a, b) => a.localeCompare(b));
+// console.log(res);
 
 //TODO:=========task-08=================
 
 // Дано масив об'єктів {name: "John", age: 27}, {name: "Jane", age: 31}, {name: "Bob", age: 19}. Створіть новий масив, що містить тільки об'єкти, в яких вік більше 20 років. Очікуваний результат: [{name: "John", age: 27}, {name: "Jane", age: 31}]
 
 // const user = [
-//   { name: 'John', age: 27 },
-//   { name: 'Jane', age: 31 },
-//   { name: 'Bob', age: 19 },]
+//   { name: "John", age: 27 },
+//   { name: "Jane", age: 31 },
+//   { name: "Bob", age: 19 },
+// ];
+
+// const whoAnderTwenty = user.filter(({ age }) => age > 20);
+// console.log(whoAnderTwenty);
 
 //TODO:=========task-11=================
 
 // Дано масив чисел [1, 2, 3, 4, 5]. Застосуйте метод reduce для обчислення суми елементів масиву
 
-//TODO:===============task-12===============================
+// const numbers = [1, 2, 3, 4, 5];
+
+// const totalSum = numbers.reduce((sum, number) => sum + number, 0);
+// console.log(totalSum);
+
+//TODO:===============task-12===============================важкувато!!!
 
 /// Даний словник із міст та дат виступів рок-групи
 /// Необхідно перетворити словник (key-value) на масив із назв міст
@@ -277,18 +308,26 @@
 /// Результат ["Умань", "Харків", "Одеса"]
 
 // const concerts = {
-//     Київ: new Date('2020-04-01'),
-//     Умань: new Date('2023-07-02'),
-//     Вінниця: new Date('2020-04-21'),
-//     Одеса: new Date('2023-07-15'),
-//     Хмельницький: new Date('2020-04-18'),
-//     Харків: new Date('2023-07-10'),
+//   Київ: new Date("2020-04-01"),
+//   Умань: new Date("2023-10-02"),
+//   Вінниця: new Date("2020-04-21"),
+//   Одеса: new Date("2023-12-15"),
+//   Хмельницький: new Date("2020-04-18"),
+//   Харків: new Date("2023-08-23"),
+// };
+
+// function concertsToArray(obj) {
+//   return Object.keys(obj)
+//     .filter((city) => obj[city] > new Date())
+//     .sort((a, b) => obj[a] - obj[b]);
 // }
+
+// console.log(concertsToArray(concerts));
+
 // ===================================================
 // Отримати масив імен всіх користувачів (поле name).
 const users = [
   {
-    id: "701b29c3-b35d-4cf1-a5f6-8b12b29a5081",
     name: "Moore Hensley",
     email: "moorehensley@indexia.com",
     eyeColor: "blue",
@@ -305,6 +344,8 @@ const users = [
     name: "Sharlene Bush",
     email: "sharlenebush@tubesys.com",
     eyeColor: "blue",
+
+    id: "701b29c3-b35d-4cf1-a5f6-8b12b29a5081",
     friends: ["Briana Decker", "Sharron Pace"],
     isActive: true,
     balance: 3821,
@@ -376,27 +417,72 @@ const users = [
     age: 39,
   },
 ];
+
+// const people = users.map(({ name }) => name);
+// console.log(people);
+
 //TODO:==========================
 // Отримати масив об'єктів користувачів за кольором очей (eyeColor).
+
+// function userEye(obj, color) {
+//   return obj.filter((item) => item.eyeColor === color);
+// }
+// console.log(userEye(users, "blue"));
+// console.log(userEye(users, "green"));
 
 //TODO:==========================
 // Отримати масив імен користувачів за статтю (поле gender)
 
+// const genderArray = (users, gender) => {
+//   return users.filter((user) => user.gender === gender);
+// };
+// console.log(genderArray(users, "male"));
+
 //TODO:==========================
 // Отримати масив тільки неактивних користувачів (поле isActive).
+// const isOnlineArray = (users) => users.filter((user) => user.isActive);
+// console.log(isOnlineArray(users));
+// console.log(users);
 
 //TODO:==========================
 // Отримати масив користувачів віком від min до max
+// const usersByAge = (users, min, max) =>
+//   users.filter(({ age }) => age >= min && age <= max);
+// console.log(usersByAge(users, 25, 36));
 
 //TODO:==========================
 // Отримати загальну суму балансу (поле balance) всіх користувачів.
-
+// const getTotalBalance = (users) =>
+//   users.reduce((totalBalance, { balance }) => totalBalance + balance, 0);
+// console.log(getTotalBalance(users));
 //TODO:==========================
-// Масив імен всіх користувачів, у яких є товарищь із зазначеним ім'ям.
+// Масив імен всіх користувачів, у яких є товариш із зазначеним ім'ям.
+// const getFriends = (users, friend) =>
+//   users.filter(({ friends }) => friends.includes(friend));
+// console.log(getFriends(users, "Goldie Gentry"));
+// console.log(getFriends(users, "Aisha Tran"));
 
 //TODO:==========================
 // Масив імен (поле name) людей, відсортованих залежно кількості їх друзів (поле friends)
 
+// const peopleByFriends = (users) =>
+//   [...users]
+//     .sort(
+//       (firstUser, secondUser) =>
+//         firstUser.friends.length - secondUser.friends.length
+//     )
+//     .map((user) => user.name);
+
+// console.log(peopleByFriends(users));
+
 //TODO:==========================
 // Отримати масив всіх умінь всіх користувачів (поле skills), при цьому не повинно бути
 // Уміння, що повторюються, і вони повинні бути відсортовані в алфавітному порядку.
+
+const sortedSrills = (users) =>
+  users
+    .flatMap((user) => user.skills)
+    .filter((skill, index, arr) => arr.indexOf(skill) === index)
+    .sort((firstSkill, secondSkill) => firstSkill.localeCompare(secondSkill));
+
+console.log(sortedSrills(users));
