@@ -479,10 +479,10 @@ const users = [
 // Отримати масив всіх умінь всіх користувачів (поле skills), при цьому не повинно бути
 // Уміння, що повторюються, і вони повинні бути відсортовані в алфавітному порядку.
 
-const sortedSrills = (users) =>
-  users
-    .flatMap((user) => user.skills)
-    .filter((skill, index, arr) => arr.indexOf(skill) === index)
-    .sort((firstSkill, secondSkill) => firstSkill.localeCompare(secondSkill));
+// const sortedSrills = (users) =>
+//   users
+//     .flatMap((user) => user.skills)
+//     .filter((skill, index, arr) => arr.indexOf(skill) === index)
+//     .sort((firstSkill, secondSkill) => firstSkill.localeCompare(secondSkill));
 
-console.log(sortedSrills(users));
+// console.log(sortedSrills(users));
