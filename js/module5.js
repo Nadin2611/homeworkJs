@@ -60,45 +60,135 @@
 // TODO Exercise 3----------------------------------------------------------------
 // Тестувальники знайшли баги в коді сервісу зберігання історії замовлень їжі. Тобі необхідно виправити їх, правильно розставивши this в методах об'єкта historyService, щоб методи почали працювати правильно.
 
-const historyService = {
-  orders: [
-    { email: "jacob@hotmail.com", dish: "Burrito" },
-    { email: "solomon@topmail.net", dish: "Burger" },
-    { email: "artemis@coldmail.net", dish: "Pizza" },
-    { email: "solomon@topmail.net", dish: "Apple pie" },
-    { email: "jacob@hotmail.com", dish: "Taco" },
-  ],
-  // Change code below this line
-  getOrdersLog() {
-    return this.orders
-      .map((order) => `email: ${order.email} dish: ${order.dish}`)
-      .join(" - ");
-  },
-  getEmails() {
-    const emails = this.orders.map((order) => order.email);
-    const uniqueEmails = new Set(emails);
-    return [...uniqueEmails];
-  },
-  getOrdersByEmail(email) {
-    return this.orders.filter((order) => order.email === email);
-  },
-  // Change code above this line
-};
-console.log(historyService.getOrdersLog());
-console.log(historyService.getEmails());
-console.log(historyService.getOrdersByEmail("solomon@topmail.net"));
+// const historyService = {
+//   orders: [
+//     { email: "jacob@hotmail.com", dish: "Burrito" },
+//     { email: "solomon@topmail.net", dish: "Burger" },
+//     { email: "artemis@coldmail.net", dish: "Pizza" },
+//     { email: "solomon@topmail.net", dish: "Apple pie" },
+//     { email: "jacob@hotmail.com", dish: "Taco" },
+//   ],
+//   // Change code below this line
+//   getOrdersLog() {
+//     return this.orders
+//       .map((order) => `email: ${order.email} dish: ${order.dish}`)
+//       .join(" - ");
+//   },
+//   getEmails() {
+//     const emails = this.orders.map((order) => order.email);
+//     const uniqueEmails = new Set(emails);
+//     return [...uniqueEmails];
+//   },
+//   getOrdersByEmail(email) {
+//     return this.orders.filter((order) => order.email === email);
+//   },
+//   // Change code above this line
+// };
+// console.log(historyService.getOrdersLog());
+// console.log(historyService.getEmails());
+// console.log(historyService.getOrdersByEmail("solomon@topmail.net"));
 
 // TODO Exercise 4----------------------------------------------------------------
+// Зміни код таким чином, щоб об'єкт parent став прототипом для об'єкта у змінній сhild.
+
+// const parent = {
+//   name: "Stacey",
+//   surname: "Moore",
+//   age: 54,
+//   heritage: "Irish",
+// };
+// // Change code below this line
+// const child = Object.create(parent);
+// // Change code above this line
+// child.name = "Jason";
+// child.age = 27;
+
+// console.log(parent.hasOwnProperty("surname"));
 
 // TODO Exercise 5----------------------------------------------------------------
+// Зміни код, побудувавши ланцюжок прототипів таким чином, щоб об'єкт ancestor був прототипом для parent, а той, своєю чергою, був прототипом для child.
+
+// const ancestor = {
+//   name: "Paul",
+//   age: 83,
+//   surname: "Dawson",
+//   heritage: "Irish",
+// };
+// // Change code below this line
+
+// const parent = Object.create(ancestor);
+// parent.name = "Stacey";
+// parent.surname = "Moore";
+// parent.age = 54;
+
+// const child = Object.create(parent);
+// child.name = "Jason";
+// child.age = 27;
+
+// // Change code above this line
+
+// console.log(parent.hasOwnProperty("heritage"));
+// console.log(parent.heritage);
 
 // TODO Exercise 6----------------------------------------------------------------
+// Використовуючи ключове слово class, оголоси клас Car з порожнім тілом.
+
+// class Car {}
 
 // TODO Exercise 7----------------------------------------------------------------
+// Додай класу Car метод constructor, який приймає три параметри:
+// brand - марка автомобіля.
+// model - модель автомобіля.
+// price - ціна автомобіля.
+// Клас Car повинен створювати об'єкт з однойменними властивостями brand, model і price, значеннями яких повинні бути передані аргументи під час його виклику з оператором new.
+
+// class Car {
+//   // Change code below this line
+//   constructor(brand, model, price) {
+//     this.brand = brand;
+//     this.model = model;
+//     this.price = price;
+//   }
+
+//   // Change code above this line
+// }
+// console.log(new Car("Audi", "Q3", 36000));
 
 // TODO Exercise 8----------------------------------------------------------------
+// Виконай рефакторинг класу Car таким чином, щоб він приймав один параметр - об'єкт з властивостями brand, model і price. Деструктуризуй об'єкт в сигнатурі(підписі) конструктора.
+
+// class Car {
+//   // Change code below this line
+//   constructor({ brand, model, price }) {
+//     this.brand = brand;
+//     this.model = model;
+//     this.price = price;
+//   }
+//   // Change code above this line
+// }
+// console.log(new Car({ brand: "BMW", model: "X5", price: 58900 }));
 
 // TODO Exercise 9----------------------------------------------------------------
+// Додай класу Car два методи.
+// getPrice() - повертає значення властивості price з об'єкта, який буде його викликати.
+// changePrice(newPrice) - оновлює значення властивості price в об'єкта, який буде його викликати на newPrice.
+
+class Car {
+  constructor({ brand, model, price }) {
+    this.brand = brand;
+    this.model = model;
+    this.price = price;
+  }
+  // Change code below this line
+  getPrice() {
+    return this.price;
+  }
+
+  changePrice(newPrice) {
+    this.price = newPrice;
+  }
+  // Change code above this line
+}
 
 // TODO Exercise 10----------------------------------------------------------------
 
