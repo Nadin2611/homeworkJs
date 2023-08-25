@@ -121,3 +121,4 @@
 
 // myNotes.addNote({ text: "Моя перша замітка", priority: Notes.Priority.LOW });
 // console.log(myNotes.items);
+
