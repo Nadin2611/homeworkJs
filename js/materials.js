@@ -122,3 +122,156 @@
 // myNotes.addNote({ text: "Моя перша замітка", priority: Notes.Priority.LOW });
 // console.log(myNotes.items);
 
+// // Налаштування
+// const recordCollection = {
+//   2548: {
+//     albumTitle: "Slippery When Wet",
+//     artist: "Bon Jovi",
+//     tracks: ["Let It Rock", "You Give Love a Bad Name"],
+//   },
+//   2468: {
+//     albumTitle: "1999",
+//     artist: "Prince",
+//     tracks: ["1999", "Little Red Corvette"],
+//   },
+//   1245: {
+//     artist: "Robert Palmer",
+//     tracks: [],
+//   },
+//   5439: {
+//     albumTitle: "ABBA Gold",
+//   },
+// };
+
+// // Змініть код лише під цим рядком
+
+// function updateRecords(records, id, prop, value) {
+//   if (value === "") {
+//     delete records[id][prop];
+//     console.log(records[id][prop]);
+//   } else if (prop !== "tracks") {
+//     records[id][prop] = value;
+//   } else if (prop === "tracks" && value != "") {
+//     records[id][prop] = records[id][prop] || [];
+
+//     records[id][prop].push(value);
+//   }
+//   return records;
+// }
+
+// console.log(
+//   updateRecords(recordCollection, 5439, "tracks", "Take a Chance on Me")
+// );
+
+// Налаштування
+// const myArr = [2, 3, 4, 5, 6];
+
+// // Змініть код лише під цим рядком
+// let total = 0;
+// for (let i = 0; i < myArr.length; i++) {
+//   console.log(i);
+//   total = total + myArr[i];
+// }
+
+// console.log(total);
+
+// function multiplyAll(arr) {
+//   let product = 1;
+//   // Змініть код лише під цим рядком
+//   for (let i = 0; i < arr.length; i++) {
+//     for (let j = 0; j < arr[i].length; j++) {
+//       product = product * arr[i][j];
+//     }
+//   }
+//   // Змініть код лише над цим рядком
+//   return product;
+// }
+
+// console.log(
+//   multiplyAll([
+//     [1, 2],
+//     [3, 4],
+//     [5, 6, 7],
+//   ])
+// );
+
+// function sum(arr, n) {
+//   // Змініть код лише під цим рядком
+//   if (n <= 0) {
+//     return 0;
+//   } else {
+//     return sum(arr, n - 1) + arr[n - 1];
+//     // Змініть код лише над цим рядком
+//   }
+// }
+
+// // Налаштування
+// const contacts = [
+//   {
+//     firstName: "Akira",
+//     lastName: "Laine",
+//     number: "0543236543",
+//     likes: ["Pizza", "Coding", "Brownie Points"],
+//   },
+//   {
+//     firstName: "Harry",
+//     lastName: "Potter",
+//     number: "0994372684",
+//     likes: ["Hogwarts", "Magic", "Hagrid"],
+//   },
+//   {
+//     firstName: "Sherlock",
+//     lastName: "Holmes",
+//     number: "0487345643",
+//     likes: ["Intriguing Cases", "Violin"],
+//   },
+//   {
+//     firstName: "Kristian",
+//     lastName: "Vos",
+//     number: "unknown",
+//     likes: ["JavaScript", "Gaming", "Foxes"],
+//   },
+// ];
+
+// function lookUpProfile(name, prop) {
+//   for (let i = 0; i < contacts.length; i++) {
+//     if (contacts[i].firstName === name) {
+//       if (contacts[i][prop] !== undefined) {
+//         return contacts[i][prop];
+//       } else {
+//         return "No such property";
+//       }
+//     }
+//   }
+//   return "No such contact";
+// }
+
+// console.log(lookUpProfile("Akira", "likes"));
+// console.log(lookUpProfile("Kristian", "lastName"));
+// console.log(lookUpProfile("Akira", "likes"));
+
+// function convertToInteger(str) {
+//   return parseInt(str);
+// }
+// console.log(convertToInteger("56"));
+
+// ========================================
+// function rangeOfNumbers(startNum, endNum) {
+//   if (startNum > endNum) {
+//     return [];
+//   } else {
+//     const countArray = rangeOfNumbers(startNum, endNum - 1);
+//     countArray.push(endNum);
+//     return countArray;
+//   }
+// }
+// console.log(rangeOfNumbers(4, 38));
+
+// const animal = {
+//   legs: 4,
+// };
+// const dog = Object.create(animal);
+// dog.name = "Манго";
+
+// console.log(dog); // { name: 'Манго', __proto__: animal }
+// console.log(animal.isPrototypeOf(dog)); // true
